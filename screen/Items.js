@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView,View,TouchableOpacity,Image,Text,FlatList,Dimensions  } from "react-native";
+import BackHeader from "../Components/BackHeader"
 
  const Wid=Dimensions.get('screen').width;
 
@@ -34,8 +35,8 @@ img: require('../assets/photo/8_ruffled-leaf-palm-plant-rattan-basket_53876-1331
 
 const ShowItems=({navigation,route})=>{
     return(
-        <SafeAreaView>
-         <View style={{alignItems:'center',justifyContent:'center',flexDirection:'row',alignContent:'space-between'}}>
+        <SafeAreaView style={{flex:1}}>
+          <BackHeader navigation={navigation}/>
            <FlatList 
            style={{}}
             data={plant}
@@ -44,7 +45,7 @@ const ShowItems=({navigation,route})=>{
                 return(
                    
                        <View>
-                         <TouchableOpacity key={index} style={{ }}>
+                         <TouchableOpacity key={index} style={{}}>
                           <Image source={item.img}/>
                           <View style={{flexDirection:'row'}}>
                             <Text>{item.name}</Text>
@@ -59,7 +60,7 @@ const ShowItems=({navigation,route})=>{
             showsVerticalScrollIndicator={false}
 
            />
-         </View>
+         
         </SafeAreaView>
     )
 }

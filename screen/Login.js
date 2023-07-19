@@ -2,7 +2,7 @@ import React from "react";
 import { SafeAreaView,Text,TextInput,TouchableOpacity,View } from "react-native";
 
 
-const Login=(Props)=>{
+const Login=({navigation})=>{
     return(
         <SafeAreaView style={{flex:1,padding:20,justifyContent:'center',backgroundColor:'#90EE90'}}>
             <View style={{alignItems:'center'}}>
@@ -26,7 +26,7 @@ const Login=(Props)=>{
             </View>
 
             <TouchableOpacity 
-              onPress={()=>Props.navigation.navigate('home')}
+              onPress={()=>navigation.navigate('home')}
             style={{backgroundColor:'blue',alignItems:'center',marginTop:20,height:45,justifyContent:'center',borderRadius:10}}>
                 <Text style={{color:'white'}}>Login</Text>
             </TouchableOpacity>
@@ -34,7 +34,7 @@ const Login=(Props)=>{
             <View style={{alignItems:'center',flexDirection:'row',justifyContent:'center',marginTop:20}}>
                 <Text style={{marginRight:5}}>I am a new user.</Text>
                 <TouchableOpacity 
-                onPress={()=>Props.navigation.navigate('signup')}
+                onPress={()=>navigation.navigate('signup')}
                 >
                     <Text style={{fontWeight:'bold',color:'blue'}}>Sign up</Text>
                     <View style={{backgroundColor:'blue',height:1,}}/>

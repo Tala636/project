@@ -1,6 +1,7 @@
 import React from "react";
 import { SafeAreaView,View,TouchableOpacity,Text,Image,FlatList } from "react-native";
 import BottomTabComponent from "../Components/Bottom";
+import MainHeader from "../Components/MainHeader";
 
 const Items=[
   {name:'Category 1',img:require('../assets/photo/1_birds-nest-plant-beige-pot_53876-134284.png')},
@@ -12,8 +13,9 @@ const Items=[
 
 const Category=({navigation,route})=>{
     return(
-        <SafeAreaView style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-         <View>
+        <SafeAreaView style={{flex:1,}}>
+          <MainHeader navigation={navigation}/>
+         <View style={{alignItems:'center',justifyContent:'center'}}>
           <FlatList
              data={Items}
              renderItem={({item,index})=>{
