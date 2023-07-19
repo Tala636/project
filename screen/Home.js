@@ -1,5 +1,4 @@
 import React from "react";
-import { SearchBar } from "react-native-screens";
 import { SafeAreaView,View,Text,TouchableOpacity,Image,FlatList,ScrollView, } from "react-native";
 import BottomTabComponent from "../Components/Bottom";
 
@@ -23,19 +22,17 @@ const Plant=[
    img: require('../assets/photo/5_monstera-plant-black-pot_53876-134313.png')},
    
 ]
-const Home=(Props)=>{
+const Home=({navigation,route})=>{
     return(
         <SafeAreaView style={{flex:1,alignItems:'center',justifyContent:'center',}}>
        <ScrollView>
-       <SearchBar placeholder="search"
-        
-       />
+       
        <View style={{marginTop:100}}>
         <Text style={{fontSize:20,marginLeft:20}}>Popular Items</Text>
             <FlatList 
               data={Plant}
               renderItem={({item,index})=>{
-                return(
+                return (
                   <TouchableOpacity 
                   style={{height:200,width:150,backgroundColor:'white',marginHorizontal:5,padding:5,elevation:2,borderRadius:10,marginLeft:10,marginTop:10}}
                    key={index}>
@@ -90,7 +87,7 @@ const Home=(Props)=>{
             </View>
           </View>
        </ScrollView>
-          <BottomTabComponent  /> 
+          <BottomTabComponent navigation={navigation} ScreenName="HomeScreen" /> 
         </SafeAreaView>
     )
 }
