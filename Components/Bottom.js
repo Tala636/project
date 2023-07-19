@@ -1,5 +1,6 @@
 import React from "react";
 import { View,Text,Dimensions,TouchableOpacity,Image,StyleSheet } from "react-native";
+import { colors } from "../Constant/theme";
 
 const Wid =Dimensions.get('screen').width;
 
@@ -9,29 +10,37 @@ const BottomTabComponent =({navigation,ScreenName})=>{
         <TouchableOpacity 
         onPress={()=>navigation.navigate('home')}
         style={{width:Wid/4,justifyContent:'center',alignItems:'center'}}>
-            <Image source={require('../assets/icons8-home-24.png')} style={[styles.icons,{tintColor:ScreenName=='HomeScreen'? '#FFA500':'#C0C0C0'}]}/>
-            <Text style={{color:ScreenName=='HomeScreen'?'#FFA500':'#C0C0C0'}}>Home</Text>
+            <Image source={require('../assets/icons8-home-24.png')}
+            resizeMode="contain"
+             style={[styles.icons,{tintColor:ScreenName=='HomeScreen'?  colors.primary:'#C0C0C0'}]}/>
+            <Text style={{color:ScreenName=='HomeScreen'? colors.primary:'#C0C0C0'}}>Home</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
         onPress={()=>navigation.navigate('category')}
         style={{width:Wid/4,justifyContent:'center',alignItems:'center'}}>
-            <Image source={require('../assets/icons8-categorize-80.png')} style={[styles.icons,{tintColor:ScreenName=='CategoScreen'? '#FFA500':'#C0C0C0'}]} />
-            <Text style={{color:ScreenName=='CategoScreen'?'#FFA500':'#C0C0C0'}}>Categories</Text>
+            <Image source={require('../assets/icons8-categorize-80.png')} 
+            resizeMode="contain"
+            style={[styles.icons,{tintColor:ScreenName=='CategoScreen'?  colors.primary:'#C0C0C0'}]} />
+            <Text style={{color:ScreenName=='CategoScreen'? colors.primary:'#C0C0C0'}}>Categories</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
         onPress={()=>navigation.navigate('cart')}
         style={{width:Wid/4,justifyContent:'center',alignItems:'center'}}>
-            <Image source={require('../assets/icons8-fast-cart-32.png')} style={[styles.icons,{tintColor:ScreenName=='CartScreen'? '#FFA500':'#C0C0C0'}]} />
-            <Text style={{color:ScreenName=='CartScreen'?'#FFA500':'#C0C0C0'}}>Add to cart</Text>
+            <Image source={require('../assets/icons8-fast-cart-32.png')}
+            resizeMode="contain"
+             style={[styles.icons,{tintColor:ScreenName=='CartScreen'?  colors.primary:'#C0C0C0'}]} />
+            <Text style={{color:ScreenName=='CartScreen'? colors.primary:'#C0C0C0'}}>Add to cart</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
         onPress={()=>navigation.navigate('profile')}
         style={{width:Wid/4,justifyContent:'center',alignItems:'center'}}>
-            <Image source={require('../assets/icons8-profile-32.png')} style={[styles.icons,{tintColor:ScreenName=='ProfileScreen'? '#FFA500':'#C0C0C0'}]} />
-            <Text style={{color:ScreenName=='ProfileScreen'?'#FFA500':'#C0C0C0'}}>Account</Text>
+            <Image source={require('../assets/icons8-profile-32.png')}
+            resizeMode="contain"
+            style={[styles.icons,{tintColor:ScreenName=='ProfileScreen'?  colors.primary:'#C0C0C0'}]} />
+            <Text style={{color:ScreenName=='ProfileScreen'? colors.primary:'#C0C0C0'}}>Account</Text>
         </TouchableOpacity>
 
 

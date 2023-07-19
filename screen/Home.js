@@ -1,6 +1,7 @@
 import React from "react";
 import { SafeAreaView,View,Text,TouchableOpacity,Image,FlatList,ScrollView, } from "react-native";
 import BottomTabComponent from "../Components/Bottom";
+import MainHeader from "../Components/MainHeader";
 
 const Plant=[
   {name:'Pant1',
@@ -24,10 +25,14 @@ const Plant=[
 ]
 const Home=({navigation,route})=>{
     return(
-        <SafeAreaView style={{flex:1,alignItems:'center',justifyContent:'center',}}>
-       <ScrollView>
+        <SafeAreaView style={{flex:1,}}>
+        <MainHeader navigation={navigation}/>
+
        
-       <View style={{marginTop:100}}>
+       <ScrollView
+
+       >
+        <View style={{marginTop:20}}>
         <Text style={{fontSize:20,marginLeft:20}}>Popular Items</Text>
             <FlatList 
               data={Plant}
@@ -45,6 +50,7 @@ const Home=({navigation,route})=>{
               horizontal
               showsHorizontalScrollIndicator={false}
             />
+          </View>
             <View style={{marginTop:20}}>
               
               <Text style={{fontSize:20,marginLeft:20}}>New Items</Text>
@@ -85,7 +91,6 @@ const Home=({navigation,route})=>{
             />
             </View>
             </View>
-          </View>
        </ScrollView>
           <BottomTabComponent navigation={navigation} ScreenName="HomeScreen" /> 
         </SafeAreaView>

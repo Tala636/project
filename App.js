@@ -9,6 +9,7 @@ import Category from "./screen/Categories";
 import Cart from "./screen/Cart";
 import Proflie from "./screen/Profile";
 import ShowItems from "./screen/Items";
+import CartDetail from "./screen/CartDetail";
 
 const stack=createNativeStackNavigator();
 
@@ -23,6 +24,7 @@ const App=()=>{
        <stack.Screen name="cart" component={Cart}/>
        <stack.Screen name="profile" component={Proflie}/>
        <stack.Screen name="showItem" component={ShowItems}/>
+       <stack.Screen name="Cart Detail" component={CartDetail}/>
        
      </stack.Navigator>
         
